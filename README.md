@@ -1,2 +1,6 @@
-# PortalOficial_analises
-LANÇAMENTO: LEMBRE-SE DE JOGA COM REPONSABILIDADE! PROIBIDO PARA MENORES DE🔞.
+# LANÇAMENTOS!
+As melhores plataformas validadas com saques rápidos:
+
+Jogos: R$ 0,10 WG
+
+Lembre-se de jogar com responsabilidade!
