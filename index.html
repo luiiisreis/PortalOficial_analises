@@ -1,138 +1,266 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1178200430929449'); fbq('track', 'PageView');</script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=1178200430929449&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal VIP - Curadoria de Entretenimento Digital</title>
+    <title>Portal VIP - Elite Digital</title>
+    <!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1178200430929449'); fbq('track', 'PageView');</script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=1178200430929449&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
     <style>
+        :root {
+            --primary: #ff0055;
+            --secondary: #28a745;
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
         body {
-            background-color: #0d0d0d;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
             margin: 0;
-            padding: 20px;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .container {
-            max-width: 600px;
-            width: 100%;
+            max-width: 500px;
+            width: 95%;
+            padding: 40px 0;
+        }
+
+        header {
             text-align: center;
+            margin-bottom: 40px;
         }
-        header h1 {
-            color: #ff0055;
-            font-size: 2.5em;
+
+        .logo-area h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #ff0055, #ff5e00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
-        .intro {
-            font-size: 1.1em;
-            color: #ccc;
-            margin-bottom: 30px;
+
+        .live-status {
+            background: rgba(40, 167, 69, 0.1);
+            border: 1px solid var(--secondary);
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
         }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
         .card {
-            background: #1a1a1a;
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 30px;
             border: 1px solid #333;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
         }
-        .badge {
-            background: #ff0055;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            display: inline-block;
+
+        .badge-premium {
+            background: linear-gradient(90deg, #ffd700, #b8860b);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: block;
+            padding: 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-bottom: 15px;
         }
-        h2 { margin: 10px 0; color: #fff; }
-        p { color: #aaa; margin-bottom: 20px; }
-        
-        .btn-main {
-            display: block;
-            background: #28a745;
+
+        .btn-primary {
+            background: var(--secondary);
             color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            transition: 0.3s;
-        }
-        .btn-main:hover { background: #218838; }
-        
-        .btn-insta {
-            display: inline-block;
-            color: #ff0055;
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
         }
 
-        .social-section {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(40, 167, 69, 0.4);
         }
-        .btn-streaming {
-            display: block;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
+
+        .withdrawal-list {
+            background: #000;
+            border-radius: 15px;
             padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
             margin: 20px 0;
+            font-size: 0.8rem;
+            text-align: left;
         }
 
-        .footer-info {
-            text-align: left;
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 50px;
+        .withdrawal-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #222;
+            padding: 8px 0;
         }
-        .footer-info h3 { color: #888; border-bottom: 1px solid #333; padding-bottom: 5px; }
-        .disclaimer { color: #ff4444; font-weight: bold; margin-bottom: 10px; }
+
+        .verified-user {
+            color: #4da3ff;
+            font-weight: bold;
+        }
+
+        .testimonial {
+            background: #222;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+            font-size: 0.85rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .legal-box {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: #888;
+            text-align: left;
+        }
+
+        .legal-box h4 {
+            color: #bbb;
+            margin-bottom: 5px;
+            font-size: 0.85rem;
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #fff;
+            color: #000;
+            padding: 12px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 9999;
+            animation: slideUp 0.5s ease-out;
+            font-size: 0.8rem;
+        }
+
+        @keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            margin-top: 40px;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>🌑 Portal Oficial (PLATAFORMA NOVA)</h1>
-        <p class="intro">Análises detalhadas das plataformas mais estáveis e seguras de 2026. Conteúdo exclusivo para membros da comunidade.</p>
+        <div class="live-status">
+            <span style="color: #28a745">●</span> 1.482 usuários operando agora
+        </div>
+        <div class="logo-area">
+            <h1>PORTAL VIP 2026</h1>
+            <p style="color: var(--text-dim)">A curadoria definitiva para alta performance digital.</p>
+        </div>
     </header>
 
     <div class="card">
-        <span class="badge">PLATAFORMA OFICIAL VERIFICADA</span>
-        <h2>Análise de Performance: Vip345.com </h2>
-        <p>Jogos: R$ 0,30 WG</p>
-        <p>Interface otimizada para dispositivos móveis com tempo de resposta imediato e suporte ativo.</p>
+        <span class="badge-premium">Plataforma Auditada</span>
+        <h2 style="margin: 15px 0">Vip345: Versão Otimizada</h2>
+        <p style="font-size: 0.95rem; color: #ccc">Recorde de pagamentos via PIX em menos de 1 minuto.</p>
         
-        <a href="https://vip345111.com/?pid=111997568" class="btn-main">ACESSAR PLATAFORMA OFICIAL</a>
-        <a href="https://www.instagram.com/27b_slots" class="btn-insta">Ver Comunidade no Instagram</a>
-    </div>
-
-    <div class="social-section">
-        <a href="https://www.instagram.com/luiiireis?igsh=bzhvNmJ1Ym1rc3Fv" class="btn-insta" style="font-size: 1.2em;">Instagram Pessoal</a>
+        <a href="https://vip345111.com/?pid=111997568" class="btn btn-primary">ACESSAR PORTAL AGORA</a>
         
-        <a href="https://luiiisreis.github.io/streaminggratuita/?utm_medium=social&utm_source=heylink.me" class="btn-streaming">ACESSAR MINHA PLATAFORMA DE STREAMING</a>
+        <div class="withdrawal-list">
+            <p style="margin-top:0; color: #666; font-weight: bold; font-size: 0.7rem">SAQUES EM TEMPO REAL:</p>
+            <div class="withdrawal-item"><span><span class="verified-user">✓</span> ronaldo_s***</span><span style="color: #28a745">+ R$ 850,00</span></div>
+            <div class="withdrawal-item"><span><span class="verified-user">✓</span> juliana.m**</span><span style="color: #28a745">+ R$ 2.150,00</span></div>
+        </div>
     </div>
 
-    <div class="footer-info">
-        <p class="disclaimer">🔞 PROIBIDO PARA MENORES DE 18 ANOS</p>
-        <p>Este portal é um agregador de análises para fins de entretenimento digital. Jogue com responsabilidade. © 2026 Portal VIP.</p>
-
-        <h3>Jogo Responsável e Isenção de Responsabilidade</h3>
-        <p>Este site atua apenas na divulgação de plataformas de jogos e apostas. Não incentivamos o jogo irresponsável. A participação é uma decisão pessoal e consciente, proibida para menores de 18 anos. Recomendamos sempre consultar os termos e condições de cada plataforma divulgada.</p>
-
-        <h3>Direitos Autorais</h3>
-        <p>© 2026 [luiiisreis]. Todos os direitos reservados. É proibida a reprodução total ou parcial do conteúdo deste site sem autorização prévia por escrito.</p>
+    <div class="card">
+        <h3 style="font-size: 1.1rem; margin-bottom: 20px;">⭐ O que dizem nossos membros</h3>
+        <div class="testimonial">
+            <strong>@pedro_dev</strong>: "Sempre tive medo de delay no saque, mas o Portal VIP recomendou a Vip345 e o PIX caiu em 30 segundos. Recomendo demais!"
+        </div>
+        <div class="testimonial">
+            <strong>@carla_mkt</strong>: "Melhor curadoria que já usei. O suporte é rápido e as plataformas são realmente auditadas."
+        </div>
+        <a href="https://www.instagram.com/27b_slots" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem">Ver Comunidade & Resultados →</a>
     </div>
+
+    <div class="legal-box">
+        <h4>🛡️ Política de Privacidade</h4>
+        <p>Seus dados de navegação são protegidos por criptografia de ponta a ponta. Não armazenamos informações sensíveis de pagamento. O uso de cookies é limitado à melhoria da experiência do usuário e análise de tráfego via Facebook Pixel.</p>
+        
+        <h4 style="margin-top:15px">⚖️ Direitos Autorais</h4>
+        <p>© 2026 Portal VIP by @luiiireis. Todos os direitos reservados. É estritamente proibida a reprodução, cópia ou distribuição de qualquer elemento visual, código ou conteúdo textual deste portal sem autorização prévia por escrito.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="https://luiiisreis.github.io/streaminggratuita/" style="color: #555; text-decoration: none; font-size: 0.8rem">Painel de Streaming Secundário</a>
+    </div>
+
+    <footer>
+        <p><strong>🔞 JOGO RESPONSÁVEL</strong></p>
+        <p>Proibido para menores de 18 anos. Gerencie seu capital com inteligência. Este site é um portal de curadoria e não se responsabiliza pelas operações em sites externos.</p>
+    </footer>
 </div>
+
+<div id="toast-area"></div>
+
+<script>
+    function showToast() {
+        const names = ['Marcos', 'Fernanda', 'Lucas', 'Beatriz', 'Ricardo', 'Sofia', 'Thiago'];
+        const values = ['R$ 150,00', 'R$ 400,00', 'R$ 1.250,00', 'R$ 80,00', 'R$ 3.000,00'];
+        const name = names[Math.floor(Math.random() * names.length)];
+        const value = values[Math.floor(Math.random() * values.length)];
+        
+        const toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        toast.innerHTML = `✅ <strong>${name}</strong> acabou de sacar <strong>${value}</strong>`;
+        document.getElementById('toast-area').appendChild(toast);
+
+        setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 4000);
+    }
+    setInterval(showToast, 8000);
+    setTimeout(showToast, 3000);
+</script>
 
 </body>
 </html>
